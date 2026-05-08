@@ -19,4 +19,5 @@
 Se abrirá la app en tu navegador en http://localhost:8100 (o el puerto que indique la terminal).<br/>
 
 
-*El documento de practica_1 se encuentra en la carpeta Practica-ionic*
+*El documento de practica_1 se encuentra en la carpeta Practica-ionic* <br/>
+Opcional al documento: `https://drive.google.com/file/d/158Iy5ai83BK3TEeChpZxEuo4LLNl59Qp/view?usp=sharing`
