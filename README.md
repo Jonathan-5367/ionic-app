@@ -1,4 +1,3 @@
-
 # Instalando Proyecto Ionic/Angular:
 
 **1. Clonar el repositorio desde GitHub**
@@ -17,4 +16,7 @@
 *-Inicia el servidor de desarrollo:* <br/>
  `ionic serve`
 
-Se abrirá la app en tu navegador en http://localhost:8100 (o el puerto que indique la terminal).
+Se abrirá la app en tu navegador en http://localhost:8100 (o el puerto que indique la terminal).<br/>
+
+
+*El documento de practica_1 se encuentra en la carpeta Practica-ionic*
