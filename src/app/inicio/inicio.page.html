@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar class="transparent-toolbar">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -7,21 +7,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true" class="glass-page ion-padding">
   <ion-header collapse="condense">
-    <ion-toolbar color="primary">
+    <ion-toolbar class="transparent-toolbar">
       <ion-title size="large">Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div class="ion-text-center" style="margin-bottom: 24px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="Ionic Logo" style="height: 60px; margin: 0 16px; vertical-align: middle;">
-    <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" style="height: 60px; margin: 0 16px; vertical-align: middle;">
-  </div>
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <div class="glass-card" style="text-align: center;">
+      <div style="margin-bottom: 24px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="Ionic Logo" style="height: 60px; margin: 0 16px; vertical-align: middle;">
+        <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" style="height: 60px; margin: 0 16px; vertical-align: middle;">
+      </div>
 
-  <div class="ion-text-center">
-    <h2>Bienvenido a mi aplicación con IONIC/ANGULAR</h2>
-    <p>Esta es la página de inicio. Usa el menú lateral para navegar a otras secciones.</p>
-    <ion-button routerLink="/info-personal" color="secondary">Ir a mi información</ion-button>
+      <h2 style="color: #333; font-weight: 700; margin-bottom: 10px;">Bienvenido a mi Web App</h2>
+      <p style="color: #666; margin-bottom: 30px;">Esta es la página principal. Usa el menú lateral para navegar y descubre el nuevo diseño.</p>
+      
+      <ion-button routerLink="/info-personal" class="glass-button" expand="block" shape="round">
+        Ver mi Perfil
+      </ion-button>
+    </div>
   </div>
 </ion-content>

@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true" class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Iniciar Sesión</h1>
+        <p>Bienvenido de nuevo</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-list lines="none">
+          <div class="input-group">
+            <ion-item class="custom-input">
+              <ion-icon name="mail-outline" slot="start"></ion-icon>
+              <ion-input formControlName="correo" type="email" placeholder="Correo electrónico"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <ion-text color="danger" *ngIf="loginForm.get('correo')?.invalid && loginForm.get('correo')?.touched">
+                <p class="error-message">Correo inválido.</p>
+              </ion-text>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <ion-item class="custom-input">
+              <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+              <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <ion-text color="danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                <p class="error-message">Mínimo 6 caracteres.</p>
+              </ion-text>
+            </div>
+          </div>
+        </ion-list>
+
+        <ion-button expand="block" type="submit" class="auth-button" shape="round" [disabled]="loginForm.invalid">
+          Entrar
+        </ion-button>
+
+        <div style="text-align: center; margin-top: 15px;">
+          <a routerLink="/registro" style="color: #667eea; text-decoration: none; font-size: 14px; font-weight: 600;">¿No tienes cuenta? Regístrate</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

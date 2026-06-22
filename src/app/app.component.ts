@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -8,8 +10,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public appPages = [
     { title: 'Inicio', url: '/inicio', icon: 'home' },
-    { title: 'Información personal', url: '/info-personal', icon: 'person' },
+    { title: 'Perfil', url: '/info-personal', icon: 'person' },
     { title: 'Contactos', url: '/contactos', icon: 'people' }
   ];
-  constructor() {}
+
+  constructor(private router: Router) {}
+
+  logout() {
+    // Aquí iría la lógica para limpiar la sesión (ej. localStorage)
+    this.router.navigate(['/login']);
+  }
 }

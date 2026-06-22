@@ -26,12 +26,120 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 /**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
+ * Global Styles for Web App Design
  */
+:root {
+  --app-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+}
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+ion-content.auth-page {
+  --background: var(--app-gradient);
+}
+
+ion-content.glass-page {
+  --background: var(--app-gradient);
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.auth-card {
+  @extend .glass-card;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  h1 {
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  p {
+    color: #666;
+    margin: 0;
+    font-size: 15px;
+  }
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.custom-input {
+  --background: #f4f5f8;
+  --border-radius: 12px;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+
+  ion-icon {
+    color: #888;
+    margin-right: 12px;
+  }
+
+  ion-input {
+    --color: #333;
+    --placeholder-color: #999;
+    font-size: 16px;
+  }
+  
+  &.item-has-focus {
+    border-color: #667eea;
+    --background: #fff;
+    ion-icon {
+      color: #667eea;
+    }
+  }
+}
+
+.error-container {
+  min-height: 20px;
+  padding-left: 12px;
+  margin-top: 4px;
+}
+
+.error-message {
+  margin: 0;
+  font-size: 12px;
+  color: #e53935;
+}
+
+.auth-button, .glass-button {
+  margin-top: 24px;
+  --background: var(--app-gradient);
+  --background-hover: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  --box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+  font-weight: 600;
+  height: 48px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/**
+ * Ionic Dark Mode
+ */
 @import "@ionic/angular/css/palettes/dark.system.css";
