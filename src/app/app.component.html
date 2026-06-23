@@ -2,13 +2,18 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Menú</ion-list-header>
-          <ion-note>Bienvenido</ion-note>
+        <div class="menu-header">
+          <div class="avatar">
+            <ion-icon name="person"></ion-icon>
+          </div>
+          <h2>Jonathan XD</h2>
+          <p>Desarrollador</p>
+        </div>
 
+        <ion-list class="custom-menu-list" lines="none">
           @for (p of appPages; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
-              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" detail="false" routerLinkActive="selected">
                 <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
@@ -16,7 +21,14 @@
           }
         </ion-list>
 
-
+        <div class="logout-container">
+          <ion-menu-toggle auto-hide="false">
+            <ion-button expand="block" fill="clear" (click)="logout()">
+              <ion-icon name="log-out-outline" slot="start"></ion-icon>
+              Cerrar Sesión
+            </ion-button>
+          </ion-menu-toggle>
+        </div>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
