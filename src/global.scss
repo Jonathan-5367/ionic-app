@@ -43,10 +43,9 @@ ion-content.glass-page {
 
 .auth-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 20px;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 40px 20px;
 }
 
 .glass-card {
@@ -59,6 +58,7 @@ ion-content.glass-page {
 
 .auth-card {
   @extend .glass-card;
+  margin: auto;
   width: 100%;
   max-width: 420px;
   padding: 40px 30px;

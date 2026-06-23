@@ -40,12 +40,48 @@
 
           <div class="input-group">
             <ion-item class="custom-input">
+              <ion-icon name="call-outline" slot="start"></ion-icon>
+              <ion-input formControlName="telefono" type="tel" placeholder="Número de teléfono"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <ion-text color="danger" *ngIf="registroForm.get('telefono')?.invalid && registroForm.get('telefono')?.touched">
+                <p class="error-message">Teléfono inválido (solo números).</p>
+              </ion-text>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <ion-item class="custom-input">
+              <ion-icon name="calendar-outline" slot="start"></ion-icon>
+              <ion-input formControlName="fechaNacimiento" type="date" placeholder="Fecha de nacimiento"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <ion-text color="danger" *ngIf="registroForm.get('fechaNacimiento')?.invalid && registroForm.get('fechaNacimiento')?.touched">
+                <p class="error-message">La fecha es obligatoria.</p>
+              </ion-text>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <ion-item class="custom-input">
               <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
               <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
             </ion-item>
             <div class="error-container">
               <ion-text color="danger" *ngIf="registroForm.get('password')?.invalid && registroForm.get('password')?.touched">
                 <p class="error-message">Mínimo 6 caracteres.</p>
+              </ion-text>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <ion-item class="custom-input">
+              <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+              <ion-input formControlName="confirmPassword" type="password" placeholder="Repetir contraseña"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <ion-text color="danger" *ngIf="registroForm.get('confirmPassword')?.hasError('passwordMismatch') && registroForm.get('confirmPassword')?.touched">
+                <p class="error-message">Las contraseñas no coinciden.</p>
               </ion-text>
             </div>
           </div>
